@@ -1,29 +1,26 @@
 import { BurgerMenu } from "components/BurgerMenu/BurgerMenu";
+import { Container } from "components/Container/Container";
 import logo from "assets/logo.svg";
 import s from "./Header.module.scss";
 import styled from "styled-components";
 
 export const Header = () => {
   return (
-    <Wrapper>
-      <nav>
-        <a href="./" className={s.logo}>
-          <img src={logo} alt="logo" />
-        </a>
-      </nav>
-      <Button>Launch app</Button>
-      <BurgerMenu />
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        <nav>
+          <a href="./">
+            <img className={s.logo} src={logo} alt="logo" />
+          </a>
+        </nav>
+        <Button>Launch app</Button>
+        <BurgerMenu />
+      </Wrapper>
+    </Container>
   );
 };
 
-const Wrapper = styled.header`
-  padding: 16px 0;
-  display: flex;
-  align-items: center;
-`;
-
-const Button = styled.button`
+export const Button = styled.button`
   padding: 8px 12px;
   margin-right: 16px;
   border-radius: 8px;
@@ -34,4 +31,10 @@ const Button = styled.button`
   line-height: 1.42;
   background: #3e8bf3;
   color: #ffffff;
+`;
+
+const Wrapper = styled.header`
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
 `;
