@@ -1,4 +1,4 @@
-import { BurgerMenu } from "components/BurgerMenu/BurgerMenu";
+import { BurgerBtn } from "components/BurgerMenu/BurgerBtn";
 import { Container } from "components/Container/Container";
 import logo from "assets/logo.svg";
 import s from "./Header.module.scss";
@@ -14,7 +14,7 @@ export const Header = () => {
           </a>
         </nav>
         <Button>Launch app</Button>
-        <BurgerMenu />
+        <BurgerBtn />
       </Wrapper>
     </Container>
   );

@@ -1,14 +1,25 @@
-import { useState } from "react";
-import s from "./BurgerMenu.module.scss";
-
 export const BurgerMenu = () => {
-  const [value, setValue] = useState(true);
+  const items = [
+    { value: "О нас", href: "/about" },
+    { value: "Как это работает", href: "/about" },
+    { value: "Где работаем", href: "/about" },
+    { value: "FAQ", href: "/about" },
+    { value: "Контакты", href: "/contacts" },
+  ];
 
   return (
-    <div className={s.burgerMenu} onClick={() => setValue(!value)}>
-      <span className={value ? s.firstLine : s.firstLineActive}></span>
-      <span className={s.secondLine}></span>
-      <span className={value ? s.thirdLine : s.thirdLineActive}></span>
+    <div className="menu">
+      <div className="blur">
+        <div className="menu__conteiner">
+          <ul>
+            {items.map((item) => (
+              <li>
+                <a href={item.href}>{item.value}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
